@@ -1,4 +1,4 @@
-import { cart, removeFromCart, updateDilveryOption } from '../../data/cart.js';
+import { cart, removeFromCart, updateDeliveryOption } from '../../data/cart.js';
 import { products, getProduct } from '../../data/products.js';
 import { formatCurrency } from '../utils/money.js';
 import { hello } from 'https://unpkg.com/supersimpledev@1.0.1/hello.esm.js';
@@ -138,7 +138,7 @@ export function renderOrderSummary() {
     .forEach((element) => {
       element.addEventListener('click', () => {
         const {productId, deliveryOptionId} = element.dataset;
-        updateDilveryOption(productId, deliveryOptionId);
+        updateDeliveryOption(productId, deliveryOptionId);
         renderOrderSummary();
 
         renderPaymentSummary();

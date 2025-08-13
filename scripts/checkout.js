@@ -11,10 +11,10 @@ async function loadPage(){
 
     await loadProductsFetch();
 
-    const value = await new Promise((resolve) => {
+    const value = await new Promise((resolve, reject) => {
       // throw 'error2';
       loadCart(() => {
-        // console.log('loadCart done')
+        // reject('error3');
         resolve('value3');
       });
     });
